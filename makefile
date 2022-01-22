@@ -22,7 +22,7 @@ OBJ=$(subst .c,.o,$(subst $(SRC_DIR)/,$(OBJ_DIR)/,$(SRC)))
 # Builds
 #---------------
 
-debug: FLAGS += -DDEBUG -g3 -Og 
+debug: FLAGS += -DDEBUG -g3 -O0 
 debug: clean all
 	gdb -tui $(BUILD_DIR)/$(PROGRAM)
 
