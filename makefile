@@ -25,10 +25,14 @@ OBJ=$(subst .c,.o,$(subst $(SRC_DIR)/,$(OBJ_DIR)/,$(SRC)))
 
 debug: FLAGS += -DDEBUG -g3 -O0 
 debug: clean all
+	@echo "Press enter to continue"
+	@read _temp_
 	gdb -tui $(BUILD_DIR)/$(PROGRAM)
 
 run: FLAGS += -g0 -O3
 run: clean all
+	@echo "Press enter to continue"
+	@read _temp_
 	./$(BUILD_DIR)/$(PROGRAM)
 
 final: FLAGS += -g0 -O3
