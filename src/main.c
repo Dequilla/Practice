@@ -1,15 +1,9 @@
 #include <stdio.h>
 
-typedef struct {
-    int one;
-    int two;
-} TestStruct;
+#include "linkedlist.h"
 
 int main(int argc, char** argv)
 {
-    TestStruct x;
-    x.one = 1;
-    x.two = 32;
-    printf("Hello world!\n%d : %d\n", x.one, x.two);
+    printf("Hello world!\n");
     return 0;
 }

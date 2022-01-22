@@ -4,15 +4,16 @@
 
 PROGRAM=Debug
 
-CC=gcc
-LIB=-lm
-INCLUDES=-Iinclude
-FLAGS=-Wall
-
 # Directories
 SRC_DIR=src
 OBJ_DIR=temp
 BUILD_DIR=build
+INCLUDE_DIR=include
+
+CC=gcc
+LIB=-lm
+INCLUDES=-I$(INCLUDE_DIR)
+FLAGS=-Wall
 
 # Source and obj files
 SRC=$(wildcard $(SRC_DIR)/*.c)
@@ -40,10 +41,10 @@ final: clean all
 all: create_folders build
 
 create_folders:
-	mkdir -p $(OBJ_DIR) $(BUILD_DIR)
+	mkdir -p $(OBJ_DIR) $(BUILD_DIR) $(INCLUDE_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(FLAGS) -o $@ -c $<
+	$(CC) $(INCLUDES) $(FLAGS) -o $@ -c $<
 	
 
 build: $(OBJ)
