@@ -4,13 +4,13 @@
 #include <stddef.h>
 
 #ifdef __cplusplus
-extern "C" {
+    extern "C" {
 #endif
 
-    typedef unsigned char byte;
+        typedef unsigned char byte;
 
 #ifdef __cplusplus
-}
+    }
 #endif
 
 #endif
